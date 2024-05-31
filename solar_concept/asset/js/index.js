@@ -8,5 +8,4 @@ async function charger (){
             $('p:first').text("Desktop");
         }
     });
-    console.log(navigator.userAgent);
 };

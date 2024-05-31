@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Roboto normal';
+    font-style: normal;
+    src: url("../font/roboto_Latin.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    src: url("../font/Bebas_Neue.woff2");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(168, 167, 167);
+    background-size: auto;
+}
+
+p {
+    font-family: 'Bebas Neue', sans-serif;
+    color: tomato;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.Navigate_bar{
+    float: left;
+    background-color: rgb(255, 183, 0);
+    position: fixed;
+    text-align: center;
+    top : 0%;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.Navigate_bar a{
+    float: none;
+    text-decoration: none;
+    padding: 10.4px 15px;
+    color: rgb(142, 142, 142);
+}
+
+.Navigate_bar a:hover{
+    text-decoration: none;
+    color : white;
+    text-shadow: 5px black;
+}
+
+.Menu_bar_list > .Menu_bar_item {
+    display : inline-block;
+    text-shadow: 5px black;
+}
+
+.Menu_logo_image > .Menu_logo {
+    display: inline-block;
+}
+
+.Menu_logo {
+    width : 100%;
+}
