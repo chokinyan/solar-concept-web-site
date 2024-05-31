@@ -10,13 +10,24 @@
     src: url("../font/Bebas_Neue.woff2");
 }
 
-* {
+body {
+    background-color: rgb(102, 102, 102);
+    margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: rgb(168, 167, 167);
-    background-size: auto;
+header > .Navigate_bar{
+    width: 100%;
+    display: block;
+    z-index: 100;
+    background-color: rgb(255, 183, 0);
+}
+
+main{
+    z-index: -1;
+    position: absolute;
+    display: block;
+    margin-top: 65px;
 }
 
 p {
@@ -28,38 +39,59 @@ h1 {
     font-family: 'Bebas Neue', sans-serif;
 }
 
+/* Menu Primary Part*/
+
 .Navigate_bar{
+    top : 0;
     float: left;
-    background-color: rgb(255, 183, 0);
     position: fixed;
     text-align: center;
-    top : 0%;
     width: 100%;
-    padding: 10px 10px;
 }
 
 .Navigate_bar a{
-    float: none;
+    font-size: 25px;
+    position:relative ;
+    right : 50%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     text-decoration: none;
-    padding: 10.4px 15px;
     color: rgb(142, 142, 142);
 }
 
 .Navigate_bar a:hover{
-    text-decoration: none;
+    text-decoration:dashed;
     color : white;
-    text-shadow: 5px black;
+    text-shadow: 10px black;
 }
 
-.Menu_bar_list > .Menu_bar_item {
+.Menu_bar_list > .Menu_bar_item, .Menu_bar_item a {
+    list-style: none;
     display : inline-block;
-    text-shadow: 5px black;
 }
+
+/* Logo clikable */
 
 .Menu_logo_image > .Menu_logo {
     display: inline-block;
+    position: relative;
+    left: 15px;
 }
 
 .Menu_logo {
-    width : 100%;
+    padding: 5px 5px;
+}
+
+/*Menu Seconde part */
+
+.Menu_bar_vehicule_div,.Menu_bar_batiment_div,.Menu_bar_vetement_div{
+    display: none;
+}
+
+.Menu_bar_vehicule_choose,.Menu_bar_vehicule_choose,.Menu_bar_vehicule_choose > .Menu_bar_vehicule_choose_item, .Menu_bar_vetement_choose_item, .Menu_bar_vehicule_batiment_item, .Menu_bar_vehicule_choose_item a, .Menu_bar_vetement_choose_item a, .Menu_bar_vehicule_batiment_item a{
+    list-style: none;
+    display : inline-block;
+    text-align: left;
 }
