@@ -12,11 +12,13 @@ function CheckDevice (){
 function MenuBar(){
     $(function (){
         //vehicule Menu
-        $("#Menu_bar_vehicule").hover(function(){
-            $(".Menu_bar_vehicule_div").slideToggle(500);
-        },
-        function(){
-            $(".Menu_bar_vehicule_div").slideToggle(500);
+        $("#Menu_bar_vehicule").click(function(){
+            if($(".Menu_bar_vehicule_div").css("display") == "none"){
+                $(".Menu_bar_vehicule_div").css("display","inline-block");
+            }
+            else{
+                $(".Menu_bar_vehicule_div").css("display","none");
+            }
         });
         //vetement Menu
         $("#Menu_bar_vetement").hover(function(){
