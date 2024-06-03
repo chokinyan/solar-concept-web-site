@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks" : [
+        {
+            "label" : "Tailwind Run",
+            "type" : "shell",
+            "command" : "npx tailwindcss -i ./tailwind/tailwind_input.css -o ./solar_concept/asset/css/tailwind/tailwind.css --watch",
+            "group" : "Tailwind"
+        }
+    ]
+  }

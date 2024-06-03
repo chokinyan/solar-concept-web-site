@@ -25,3 +25,8 @@
     });
 
 })();
+
+// web astro
+// gatsby
+// Boostrap
+// tailwindcss
