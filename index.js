@@ -13,9 +13,8 @@
         res.sendFile(path.join(__dirname,'solar_concept'));
     });
 
-    app.get('/test',(req, res) =>{
-        console.log(req);
-        res.send("test ok");
+    app.get('/vehicule/film%20protection',(req, res) =>{
+        res.sendFile(path.join(__dirname,"solar_concept/vehicule/index.html"));
     });
 
 //--------------------------------------------------------------------------------------------------------------

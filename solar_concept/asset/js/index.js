@@ -10,53 +10,29 @@ function CheckDevice (){
 };
 
 function MenuBar(){
-    var deployer = {
-        target : "",
-        is : false
-    };
     $(function (){
+        const menuList = {
+            "Menu_bar_vehicule" : ".Menu_bar_vehicule_div",
+            "Menu_bar_vetement" : ".Menu_bar_vetement_div",
+            "Menu_bar_batiment" : ".Menu_bar_batiment_div"
+        };
+        var retract = "";
         $("body").on("click",function(item){
             let target = item.target.id;
-            switch (target) {
-                case "Menu_bar_vehicule":
-                    break;
-                
-                case "Menu_bar_vetement":
-                    break;
-                
-                case "Menu_bar_batiment":
-                    break;
-                
-                case _:
-                    break
+            if(retract != "" && target != retract){
+                $(`${menuList[retract]}`).css("display", "none");
+                retract = "";
             }
-        })
-        //vehicule Menu
-        $("#Menu_bar_vehicule").on("click",function(item){
-            if($(".Menu_bar_vehicule_div").css("display") == "none"){
-                $(".Menu_bar_vehicule_div").css("display","inline-block");
-            }
-            else{
-                $(".Menu_bar_vehicule_div").css("display","none");
-            }
-        });
-        //vetement Menu
-        $("#Menu_bar_vetement").on("click",function(){
-                if($(".Menu_bar_vetement_div").css("display") == "none"){
-                    $(".Menu_bar_vetement_div").css("display","inline-block");
+            if($(menuList[target]) !=undefined ){
+                if($(`${menuList[target]}`).css("display") == "none"){
+                    $(`${menuList[target]}`).css("display","inline-block");
+                    retract = `${target}`;
                 }
                 else{
-                    $(".Menu_bar_vetement_div").css("display","none");
+                    $(`${menuList[target]}`).css("display","none");
+                    retract = "";
                 }
+            }
         });
-        //batiment Menu
-        $("#Menu_bar_batiment").on("click",function(){
-                if($(".Menu_bar_batiment_div").css("display") == "none"){
-                    $(".Menu_bar_batiment_div").css("display","inline-block");
-                }
-                else{
-                    $(".Menu_bar_batiment_div").css("display","none");
-                }
-        });
-    })
-}
+    });
+};
