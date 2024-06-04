@@ -13,12 +13,6 @@
     src: url("../font/Bebas_Neue.woff2");
 }
 
-body {
-    background-color: rgb(102, 102, 102);
-    margin: 0;
-    box-sizing: border-box;
-}
-
 header > .Navigate_bar{
     position: fixed;
     width: 100%;
