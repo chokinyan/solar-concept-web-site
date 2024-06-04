@@ -1,3 +1,6 @@
+@import "./tailwind/tailwind.css";
+@import "./bootstrap/bootstrap.css";
+
 @font-face {
     font-family: 'Roboto normal';
     font-style: normal;
@@ -21,22 +24,13 @@ header > .Navigate_bar{
     width: 100%;
     display: block;
     z-index: 100;
-    background-color: rgb(255, 183, 0);
+    background-color: rgb(254, 166, 59);
 }
 
 main{
     z-index: 0;
     display: block;
     margin-top: 80px;
-}
-
-p {
-    font-family: 'Bebas Neue', sans-serif;
-    color: tomato;
-}
-
-h1 {
-    font-family: 'Bebas Neue', sans-serif;
 }
 
 /* Menu Primary Part*/
@@ -59,6 +53,8 @@ h1 {
     text-decoration: none;
     color: rgb(142, 142, 142);
 }
+
+.tw-
 
 .Navigate_bar a:hover{
     text-decoration:dashed;
@@ -100,13 +96,4 @@ h1 {
 .Menu_bar_vehicule_choose_item a, .Menu_bar_vetement_choose_item a, .Menu_bar_vehicule_batiment_item a{
     padding-left: 10px;
     padding-right: 10px;
-}
-
-/*footer*/
-
-footer {
-    background-color: black;
-    z-index: 50;
-    display: block;
-    margin-top: 50px;
 }
