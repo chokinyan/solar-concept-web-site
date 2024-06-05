@@ -566,6 +566,18 @@ video {
   margin-inline-start: 5rem;
 }
 
+.tw-ms-1 {
+  margin-inline-start: 0.25rem;
+}
+
+.tw-ms-12 {
+  margin-inline-start: 3rem;
+}
+
+.tw-ms-14 {
+  margin-inline-start: 3.5rem;
+}
+
 .tw-cursor-pointer {
   cursor: pointer;
 }
