@@ -13,7 +13,7 @@
         res.sendFile(path.join(__dirname,'solar_concept'));
     });
 
-    app.get('/vehicule/film%20protection',(req, res) =>{
+    app.get('/vehicule/film%20de%20protection',(req, res) =>{
         res.sendFile(path.join(__dirname,"solar_concept/vehicule/film_de_protection/index.html"));
     });
 
