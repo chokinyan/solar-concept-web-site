@@ -554,6 +554,16 @@ video {
   --tw-contain-style:  ;
 }
 
+.tw-mx-24 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.tw-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .tw-ms-14 {
   margin-inline-start: 3.5rem;
 }
@@ -582,6 +592,11 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
+.tw-object-left {
+  -o-object-position: left;
+     object-position: left;
+}
+
 .tw-ps-20 {
   padding-inline-start: 5rem;
 }
@@ -592,6 +607,10 @@ video {
 
 .tw-pt-28 {
   padding-top: 7rem;
+}
+
+.tw-text-center {
+  text-align: center;
 }
 
 .tw-text-black {
@@ -625,6 +644,26 @@ video {
 .child\:\*\:tw-mx-14 > * > * {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
+}
+
+.child\:\*\:tw-mx-24 > * > * {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.child\:\*\:tw-mx-2 > * > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.child\:\*\:tw-mx-20 > * > * {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.child\:\*\:tw-mx-16 > * > * {
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .child\:\*\:tw-text-3xl > * > * {
