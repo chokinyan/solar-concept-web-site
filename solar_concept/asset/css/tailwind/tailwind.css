@@ -554,26 +554,16 @@ video {
   --tw-contain-style:  ;
 }
 
-.tw-mx-24 {
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-
-.tw-mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.tw-ms-14 {
-  margin-inline-start: 3.5rem;
-}
-
 .tw-ms-32 {
   margin-inline-start: 8rem;
 }
 
 .tw-cursor-pointer {
   cursor: pointer;
+}
+
+.tw-justify-between {
+  justify-content: space-between;
 }
 
 .tw-space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -609,10 +599,6 @@ video {
   padding-top: 7rem;
 }
 
-.tw-text-center {
-  text-align: center;
-}
-
 .tw-text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -646,24 +632,13 @@ video {
   margin-right: 3.5rem;
 }
 
-.child\:\*\:tw-mx-24 > * > * {
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-
-.child\:\*\:tw-mx-2 > * > * {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.child\:\*\:tw-mx-20 > * > * {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .child\:\*\:tw-mx-16 > * > * {
   margin-left: 4rem;
   margin-right: 4rem;
+}
+
+.child\:\*\:tw-text-center > * > * {
+  text-align: center;
 }
 
 .child\:\*\:tw-text-3xl > * > * {
