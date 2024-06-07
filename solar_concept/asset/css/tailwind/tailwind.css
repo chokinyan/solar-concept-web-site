@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.tw-float-left {
+  float: left;
+}
+
 .tw-ms-32 {
   margin-inline-start: 8rem;
 }
