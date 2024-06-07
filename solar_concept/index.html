@@ -11,30 +11,33 @@
         <script src="/asset/js/index.js"></script>
         <script src="/asset/js/timeout.js"></script>
         <script src="/asset/js/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/asset/js/bootstrap/bootstrap.bundle.js"></script>
         <!--<link rel="stylesheet" href="/asset/css/index.css">-->
         <link rel="stylesheet" href="/asset/css/tailwind/tailwind.css">
         <link rel="stylesheet" href="/asset/css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="/asset/css/bootstrap/bootstrap.rtl.css">
-        <link rel="stylesheet" href="/asset/image/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
-        <script src="/asset/js/bootstrap/bootstrap.bundle.js"></script>
         <style>
             .dropdown:hover .dropdown-menu {
                 display: block;
             }
+
         </style>
     </head>
     <body>
         <header class="tw-bg-orange-400 bg-gradient fixed-top">
-            <nav class="navbar-expend-md">
+            <nav class="navbar navbar-expend-xxl">
                 <div class="container align-items-center d-flex py-2">
                     <!-- Logo clickable -->
                     <a class="navbar-brand tw-text-gray-700" href="/">
                         <img src="/asset/image/logo_solar_concept03.png" alt="Solar Concept" width="100px" height="50px">
                     </a>
-                    <div class="child:*:tw-mx-14 child:*:tw-text-lg child:*:*:tw-text-gray-700 child:*:*:tw-no-underline">
-                        <ul class="nav">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarstop" aria-controls="navbarstop" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse child:*:tw-mx-14 child:*:tw-text-lg child:*:*:tw-text-gray-700 child:*:*:tw-no-underline" id="navbarstop">
+                        <ul class="nav me-auto mb-2 mb-md-0">
                             <li class="dropdown nav-item">
-                                <a data-bs-toggle="dropdown" class="disabled tw-cursor-pointer">
+                                <a href="#" data-bs-toggle="dropdown" class="disabled">
                                     Véhicule
                                 </a>
                                 <!-- dropdown menu -->
@@ -59,7 +62,7 @@
                                     </li>
                                 </ul>
                             </li><li class="dropdown nav-item">
-                                <a class="disabled tw-cursor-pointer" data-bs-toggle="dropdown">
+                                <a href="#" class="disabled" data-bs-toggle="dropdown">
                                     Marquage Publicitaire
                                 </a>
                                 <!-- dropdown menu -->
@@ -75,7 +78,7 @@
                                     </li>
                                 </ul>
                             </li><li class="dropdown nav-item">
-                                <a class="disabled tw-cursor-pointer" data-bs-toggle="dropdown">
+                                <a href="#" class="disabled" data-bs-toggle="dropdown">
                                     Batiment
                                 </a>
                                 <!-- dropdown menu -->

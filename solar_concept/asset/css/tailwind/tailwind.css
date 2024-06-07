@@ -554,28 +554,12 @@ video {
   --tw-contain-style:  ;
 }
 
-.tw-ms-10 {
-  margin-inline-start: 2.5rem;
+.tw-ms-14 {
+  margin-inline-start: 3.5rem;
 }
 
 .tw-ms-32 {
   margin-inline-start: 8rem;
-}
-
-.tw-ms-20 {
-  margin-inline-start: 5rem;
-}
-
-.tw-ms-1 {
-  margin-inline-start: 0.25rem;
-}
-
-.tw-ms-12 {
-  margin-inline-start: 3rem;
-}
-
-.tw-ms-14 {
-  margin-inline-start: 3.5rem;
 }
 
 .tw-cursor-pointer {
@@ -608,10 +592,6 @@ video {
 
 .tw-pt-28 {
   padding-top: 7rem;
-}
-
-.tw-ps-10 {
-  padding-inline-start: 2.5rem;
 }
 
 .tw-text-black {
