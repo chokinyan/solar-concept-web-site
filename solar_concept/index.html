@@ -74,35 +74,49 @@
               </nav>            
         </header>
         <main class="tw-bg-slate-400 bg-gradient">
-            <div id="carouselAutomobile" class="carousel h-auto" data-bs-ride="carousel">
+            <div id="carouselAutomobile" class="carousel h-auto carousel-fade" data-bs-ride="carousel">
+                <div class="position-absolute z-3 container-fluid text-center">
+                    <a type="button" class="carousel-number" data-bs-target="#carouselAutomobile" data-bs-slide-to="0" class="active" aria-label="Slide 1"><img src="asset/image/icon/1-circle.svg" alt="Carousel 1"></a>
+                    <a type="button" class="carousel-number" data-bs-target="#carouselAutomobile" data-bs-slide-to="1" aria-label="Slide 2"><img src="asset/image/icon/2-circle.svg" alt="Carousel 2"></a>
+                    <a type="button" class="carousel-number" data-bs-target="#carouselAutomobile" data-bs-slide-to="2" aria-label="Slide 3"><img src="asset/image/icon/3-circle.svg" alt="Carousel 3"></a>
+                    <a type="button" class="carousel-number" data-bs-target="#carouselAutomobile" data-bs-slide-to="3" aria-label="Slide 4"><img src="asset/image/icon/4-circle.svg" alt="Carousel 4"></a>
+                    <a type="button" class="carousel-number" data-bs-target="#carouselAutomobile" data-bs-slide-to="4" aria-label="Slide 5"><img src="asset/image/icon/5-circle.svg" alt="Carousel 5"></a>
+                </div>
                 <div class="carousel-inner w-100" id="AutomobileCarouselInner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active AutomobileCarousel" >
                         <img src="asset/image/automobile/aventador.jpg" class="d-block w-100" alt="aventador" id="Test">
-                        <div class="top-0 position-absolute tw-text-white container">
+                        <div class="position-absolute tw-text-white container tw-text-center Automobile-Container">
                             <p class="AutomobileTitre">LAMBORGHINI AVENTADOR ROADSTER 700LP</p>
+                            <!--<div>
+                                <a type="button" data-bs-target="#carouselAutomobile" data-bs-slide-to="1" class="tw-no-underline active" aria-current="true" aria-label="Slide 1"><img src="asset/image/icon/3-circle.svg" alt="Carousel 3"></a>
+                            </div>-->
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="asset/image/automobile/bugatti.jpeg" class="d-block w-100" alt="bugatti">
-                        <div class="top-0 position-absolute tw-text-white container">
-                            <p class="AutomobileTitre">LAMBORGHINI AVENTADOR ROADSTER 700LP</p>
+                        <div class="position-absolute tw-text-white container tw-text-center Automobile-Container">
+                            <p class="AutomobileTitre">LBUGATTI VEYRON ROADSTER GRAND SPORT VITESSE</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="asset/image/automobile/ferari.jpg" class="d-block w-100" alt="ferari">
-                        <div class="top-0 position-absolute tw-text-white container">
-                            <p class="AutomobileTitre">LAMBORGHINI AVENTADOR ROADSTER 700LP</p>
+                        <div class="position-absolute tw-text-white container tw-text-center Automobile-Container">
+                            <p class="AutomobileTitre">FERRARI 488 GTB</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="asset/image/automobile/bmw.jpeg" class="d-block w-100" alt="bmw">
+                        <div class="position-absolute tw-text-white container tw-text-center Automobile-Container">
+                            <p class="AutomobileTitre">BMW M4 CSL</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="asset/image/automobile/ferarie_mat.jpeg" class="d-block w-100" alt="ferarie_mat">
+                        <div class="position-absolute tw-text-white container tw-text-center Automobile-Container">
+                            <p class="AutomobileTitre">FERRARI GTC4 LUSSO</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutomobile" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselAutomobile" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
         </main>
         <footer class="tw-bg-slate-700 ps-5 bg-gradient container-fluid tw-float-left">

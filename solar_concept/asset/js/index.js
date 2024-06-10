@@ -8,3 +8,7 @@ function CheckDevice (){
         }
     });
 };
+
+function Test(){
+    console.log("Testing");
+}

@@ -554,12 +554,24 @@ video {
   --tw-contain-style:  ;
 }
 
+.tw-left-1\/2 {
+  left: 50%;
+}
+
+.tw-right-1\/2 {
+  right: 50%;
+}
+
 .tw-float-left {
   float: left;
 }
 
 .tw-ms-6 {
   margin-inline-start: 1.5rem;
+}
+
+.tw-items-center {
+  align-items: center;
 }
 
 .tw-space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -583,13 +595,16 @@ video {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
+.tw-bg-center {
+  background-position: center;
+}
+
 .tw-ps-8 {
   padding-inline-start: 2rem;
 }
 
-.tw-text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.tw-text-center {
+  text-align: center;
 }
 
 .tw-text-black {
@@ -608,12 +623,6 @@ video {
 
 .tw-no-underline {
   text-decoration-line: none;
-}
-
-.tw-shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .child\:\*\:tw-mx-16 > * > * {

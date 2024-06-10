@@ -19,4 +19,15 @@
 
 .AutomobileTitre {
     font-size: 4vw !important;
+    text-shadow: 0.2vw 0.2vh #000000;
+}
+
+.Automobile-Container {
+    max-width: 60%;
+    top: 10%;
+}
+
+.carousel-number {
+    width: 7vw;
+    height: 7vh;
 }
