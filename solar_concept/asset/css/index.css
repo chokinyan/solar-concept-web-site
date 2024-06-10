@@ -16,3 +16,7 @@
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+.AutomobileTitre {
+    font-size: 4vw !important;
+}
