@@ -578,12 +578,18 @@ video {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
-.tw-ps-8 {
-  padding-inline-start: 2rem;
+.tw-bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
-.tw-pt-28 {
-  padding-top: 7rem;
+.tw-bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.tw-ps-8 {
+  padding-inline-start: 2rem;
 }
 
 .tw-text-black {
