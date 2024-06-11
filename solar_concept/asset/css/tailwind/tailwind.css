@@ -554,24 +554,12 @@ video {
   --tw-contain-style:  ;
 }
 
-.tw-left-1\/2 {
-  left: 50%;
-}
-
-.tw-right-1\/2 {
-  right: 50%;
-}
-
 .tw-float-left {
   float: left;
 }
 
 .tw-ms-6 {
   margin-inline-start: 1.5rem;
-}
-
-.tw-items-center {
-  align-items: center;
 }
 
 .tw-space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -593,10 +581,6 @@ video {
 .tw-bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-
-.tw-bg-center {
-  background-position: center;
 }
 
 .tw-ps-8 {
