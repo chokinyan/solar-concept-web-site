@@ -32,3 +32,7 @@ function Test(){
         attributes: true,
     });
 }
+
+function RealisationAlbum(){
+    
+};

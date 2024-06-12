@@ -1,6 +1,6 @@
 (async ()=>{
     const path = require('path');
-    const fs = require('fs');
+    const chokidar = require('chokidar');
     const express = require('express');
     const app = express();
     const port = process.env.PORT || 3000;
@@ -21,6 +21,9 @@
         res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/aventador/index.html'));
     });
 
+    app.get('/contact',(req, res) =>{
+        res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
+    });
 
 
     /*
@@ -33,13 +36,33 @@
     */
 //--------------------------------------------------------------------------------------------------------------
 
+    const realisationWatch = chokidar.watch(__dirname + '/solar_concept/nos_realisations',{persistent:true});
+
+    realisationWatch.on('change',(path)=>{
+        console.log(path);
+    });
+    realisationWatch.on("addDirectory",(path)=>{
+        console.log(path);
+    });
+    realisationWatch.on("add",(path)=>{
+        console.log(path);
+    });
+    realisationWatch.on('unlink',(path)=>{
+        console.log(path);
+    });
+    realisationWatch.on("unlinkDir",(path)=>{
+        console.log(path);
+    });
+
+
+
     app.listen(port,()=>{
         console.log(`Server is running on port ${port}`);
     });
 
 })();
 
-// web astro
+// astro build
 // gatsby
 // Boostrap
 // tailwindcss
