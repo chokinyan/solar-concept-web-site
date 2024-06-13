@@ -31,8 +31,8 @@
         res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
     })
 
-    albumApp.post('/albumAdd',(_req,res)=>{
-        res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
+    albumApp.post('/albumAdd',(req,res)=>{
+        res.redirect('/');
     });
 
 
