@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Solar Concept"/>
+        <title>Solar Concept Pannel edit realisation</title>
+        <script src="index.js"></script>
+        <script src="/js/jquery/jquery-3.7.1.min.js"></script>
+        <script src="/js/bootstrap/bootstrap.bundle.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="/css/tailwind/tailwind.css">
+    </head>
+    <body>
+        <div class="container" id="image-upload">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-4">
+                <div class="col btn btn-info w-25 btn-sm">
+                    <form action="/albumAdd" method="post">
+                        <input type="submit" value="envoyé sur le site">
+                    </form>
+                </div>
+                <div class="input-group col">
+                    <input type="file" class="form-control tw-bg-black tw-text-white" accept="image/*" onchange="fileAdd(this)" id="FileUploader" multiple>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

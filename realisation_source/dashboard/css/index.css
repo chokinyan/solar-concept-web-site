@@ -1,0 +1,28 @@
+@import "./tailwind/tailwind.css";
+@import "./bootstrap/bootstrap.css";
+
+@font-face {
+    font-family: 'Roboto normal';
+    font-style: normal;
+    src: url("../font/roboto_Latin.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    font-style: normal;
+    src: url("../font/Bebas_Neue.woff2");
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.AutomobileTitre {
+    font-size: 4vw !important;
+    text-shadow: 0.2vw 0.2vh #000000;
+}
+
+.Automobile-Container {
+    max-width: 60%;
+    top: 10%;
+}

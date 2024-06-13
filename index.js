@@ -4,12 +4,16 @@
     const chokidar = require('chokidar');
     const express = require('express');
     const app = express();
+    const albumApp = express()
     const port = process.env.PORT || 3000;
+    const AlbumPort = process.env.PORT || 5000;
     const {load} = require('cheerio');
 
 //--------------------------------------------------------------------------------------------------------------
 
     app.use('/',express.static(path.join(__dirname,'solar_concept')));
+    albumApp.use('/', express.static(path.join(__dirname,'/realisation_source/dashboard')));
+
 
     app.get('/', (req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept'));
@@ -22,6 +26,15 @@
     app.get('/contact',(req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
     });
+
+    albumApp.get('/',(_req,res)=>{
+        res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
+    })
+
+    albumApp.post('/albumAdd',(_req,res)=>{
+        res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
+    });
+
 
     
     /*
@@ -77,102 +90,74 @@
                 }
                 else{
                     let config = require(`${path.join(__dirname,`/realisation_source/${file}/config.json`)}`);
-                    let folderName = file.toLocaleUpperCase().replace(/\s/g,"_");
-                    
-                    if(!fs.existsSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}`))){
-                        fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}`));
-                        fs.mkdirSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}`));
-                    };
-                    
-                    for(let image of config.image){
-                        fs.copyFileSync(path.join(__dirname,`/realisation_source/${file}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${image}`));
-                    }
+                    if(config?.albumsImage != undefined){
+                        let folderName = file.toLocaleUpperCase().replace(/\s/g,"_");
+                        
+                        if(!fs.existsSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}`))){
+                            fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}`));
+                            fs.mkdirSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}`));
+                        };
 
-                    if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${config.albumsImage}`))){
-                        fs.copyFileSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${config.albumsImage}`));
-                    };
+                        for(let image of config.image){
+                            fs.copyFileSync(path.join(__dirname,`/realisation_source/${file}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${image}`));
+                        }
 
-                    $(`
-                        <h1>${file.toLocaleUpperCase()}</h1>
-                        <hr>
-                        `).appendTo('#description');
+                        if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${config.albumsImage}`))){
+                            fs.copyFileSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${folderName}/${config.albumsImage}`));
+                        };
 
-                    let description = fs.readFileSync(path.join(__dirname,`/realisation_source/${file}/${config.description}`),"utf-8");
-                    for(let ligne of description.split("\n")){
-                        $(`<p>${ligne}</p>`).appendTo('#description');
-                    }
-
-                    for(let photo of config.image){
                         $(`
-                            <div class="card mb-5 hover:tw-shadow-2xl">
-                                <img src="../../asset/image/realisation/${folderName}/${photo}" class="card-img-top" alt="Aventador card">
+                            <h1>${file.toLocaleUpperCase()}</h1>
+                            <hr>
+                            `).appendTo('#description');
+
+                        let description = fs.readFileSync(path.join(__dirname,`/realisation_source/${file}/${config.description}`),"utf-8");
+                        for(let ligne of description.split("\n")){
+                            $(`<p>${ligne}</p>`).appendTo('#description');
+                        }
+
+                        for(let photo of config.image){
+                            $(`
+                                <div class="card mb-5 hover:tw-shadow-2xl">
+                                    <img src="../../asset/image/realisation/${folderName}/${photo}" class="card-img-top" alt="Aventador card">
+                                </div>
+                                `).appendTo("#image");
+                        };
+
+                        fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`),$.html());
+
+                        app.get(`/nos%20realisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
+                            res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
+                        });
+
+                        $2(`
+                            <div class="col">
+                                <div class="card">
+                                    <a href="/nos%20realisations/${file.replace(/\s/g,"-")}">
+                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" class="card-img-top" alt="${file} card">
+                                    </a>
+                                </div>
+                                <div class="card-body text-center">
+                                    <a href="/nos%20realisations/${file.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                                        <h5 class="card-title">${file.toLocaleUpperCase()}</h5>
+                                    </a>
+                                </div>
                             </div>
-                            `).appendTo("#image");
-                    };
+                            `).appendTo("#album");
+                        
+                        fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
-                    fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`),$.html());
-                    
-                    app.get(`/nos%20realisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
-                        res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
-                    });
-
-                    $2(`
-                        <div class="col">
-                            <div class="card">
-                                <a href="/nos%20realisations/${file.replace(/\s/g,"-")}">
-                                    <img src="asset/image/realisation/${folderName}/${config.albumsImage}" class="card-img-top" alt="${file} card">
-                                </a>
-                            </div>
-                            <div class="card-body text-center">
-                                <a href="/nos%20realisations/${file.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
-                                    <h5 class="card-title">${file.toLocaleUpperCase()}</h5>
-                                </a>
-                            </div>
-                        </div>
-                        `).appendTo("#album");
-                    
-                    fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
-
-                    $('#description').empty();
-                    $('#image').empty();
-
+                        $('#description').empty();
+                        $('#image').empty();
+                    }
                 }
                 
-
-
             }
         }
-
-
-
-
-        //-------------------------------------------------------------------------------------------------------------------------
-
-        realisationWatch.on("addDir",(pathAddDir)=>{
-
-        });
-
-        realisationWatch.on("add",(pathAdd)=>{
-        
-        });
-
-        realisationWatch.on('change',(pathChange)=>{
-        
-        });
-
-        realisationWatch.on('unlink',(pathUnlink)=>{
-        
-        });
-
-        realisationWatch.on("unlinkDir",(pathUnlinkDir)=>{
-        
-        });
     });
 
     realisationWatch.on("error",(err)=>{
         console.log(err);
-
-    //--------------------------------------------------------------------------------------------------------------------------------
 
     });
 
@@ -180,6 +165,10 @@
     app.listen(port,()=>{
         console.log(`Server is running on port ${port}`);
     });
+
+    albumApp.listen(AlbumPort,()=>{
+        console.log(`Server 2 is running on port ${AlbumPort}`);
+    })
 
 })();
 
