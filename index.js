@@ -49,11 +49,9 @@
             const title = body.title;
             const images = body.images;
             const frontImage = body.frontImage;
-            console.log(images)
             for(let img of images){
-                let data = Buffer.from(img.data,'base64').toString()
-                console.log(data)
-                fs.writeFileSync(path.join(__dirname,`/realisation_source/dashboard/${img.name}`),`${data}`)
+                let data = Buffer.from(img.data,'base64');
+                fs.writeFileSync(path.join(__dirname,`/realisation_source/dashboard/${img.name}`),data)
             }
         }
     });

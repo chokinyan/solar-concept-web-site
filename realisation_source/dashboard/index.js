@@ -3,10 +3,15 @@ const imageList = [];
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,\//, ""));
+    reader.onload = () => resolve(reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, ""));
     //.replace(/^data:image\/(png|jpg|jpeg);base64,\//, "")
+    //data:image/png;base64,
     reader.onerror = reject;
 });
+
+function Verification(){
+    
+}
 
 async function ImageAdd(){
     const containerImageUpload = document.getElementById('image-upload');
