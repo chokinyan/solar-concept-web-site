@@ -11,21 +11,29 @@
         <link rel="stylesheet" href="/css/tailwind/tailwind.css">
     </head>
     <body>
-        <div class="container-sm">
-            <div>
-                <input class="btn btn-info mt-4 mb-4" type="button" value="envoyé sur le site" onclick="submitAlbum()"/>
+        <main>
+            <div class="container-lg">
+                <div class=" text-center">
+                    <input class="btn btn-info mt-4 mb-4" type="button" value="envoyé sur le site" onclick="submitAlbum()"/>
+                </div>
+                <div>
+                    <input type="text" class="form-control w-100 mt-4 mb-4" placeholder="titre" id="title">
+                </div>
+                <div>
+                    <textarea class="form-control w-100 mt-4 mb-4" placeholder="description" id="description"></textarea>
+                </div>
+                <h5 class="text-center mb-2 mt-2">PHOTO DE MISE EN AVANT</h5>
+                <div class="input-group">
+                    <input type="file" class="form-control tw-bg-black tw-text-white mt-4 mb-4" accept="image/*" onchange="ImageFrontAdd()" id="FileFrontUploader">
+                </div>
+                <div id="image-front-upload"></div>
+                <h5 class="text-center mb-2 mt-2">PHOTO DE L'ALBUM</h5>
+                <div class="input-group">
+                    <input type="file" class="form-control tw-bg-black tw-text-white mt-4 mb-4" accept="image/*" onchange="ImageAdd()" id="FileUploader" multiple>
+                </div>
+                <div id="image-upload"></div>
             </div>
-            <div>
-                <input type="text" class="form-control w-100 mt-4 mb-4" placeholder="titre" id="title">
-            </div>
-            <div>
-                <textarea class="form-control w-100 mt-4 mb-4" placeholder="description" id="description"></textarea>
-            </div>
-            <div class="input-group">
-                <input type="file" class="form-control tw-bg-black tw-text-white mt-4 mb-4" accept="image/*" onchange="fileAdd(this)" id="FileUploader" multiple>
-            </div>
-            <div class="" id="image-upload"></div>
-        </div>
+        </main>
         <script>
             document.getElementById('description').addEventListener('keyup',expendAreaText);
         </script>

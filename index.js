@@ -3,36 +3,59 @@
     const fs = require('fs');
     const chokidar = require('chokidar');
     const express = require('express');
+    const bodyParser = require('body-parser');
+    const multer = require('multer');
+    const {Buffer} = require('buffer');
     const app = express();
-    const albumApp = express()
+    const albumApp = express();
+    const axios = require('axios');
     const port = process.env.PORT || 3000;
     const AlbumPort = process.env.PORT || 5000;
     const {load} = require('cheerio');
+    const upload = multer();
 
 //--------------------------------------------------------------------------------------------------------------
 
     app.use('/',express.static(path.join(__dirname,'solar_concept')));
+    app.use(bodyParser.json({limit : "1000mb"}));
+    app.use(bodyParser.urlencoded({ extended: true , limit : "1000mb"}));
+
     albumApp.use('/', express.static(path.join(__dirname,'/realisation_source/dashboard')));
+    albumApp.use(bodyParser.json({limit : "1000mb"}));
+    albumApp.use(bodyParser.urlencoded({ extended: true , limit : "1000mb"}));
 
-
-    app.get('/', (req, res) =>{
+    app.get('/', (_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept'));
     });
 
-    app.get('/nos%20realisations',(req, res) =>{
+    app.get('/nos%20realisations',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/index.html'));
     });
 
-    app.get('/contact',(req, res) =>{
+    app.get('/contact',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
     });
+
+//--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{
         res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
     })
 
-    albumApp.post('/albumAdd',(req,res)=>{
-        res.redirect('/');
+    albumApp.post('/albumAdd',async (req,_res)=>{
+        const body = req?.body;
+        if(body !== undefined){
+            const description = body.description;
+            const title = body.title;
+            const images = body.images;
+            const frontImage = body.frontImage;
+            console.log(images)
+            for(let img of images){
+                let data = Buffer.from(img.data,'base64').toString()
+                console.log(data)
+                fs.writeFileSync(path.join(__dirname,`/realisation_source/dashboard/${img.name}`),`${data}`)
+            }
+        }
     });
 
 
