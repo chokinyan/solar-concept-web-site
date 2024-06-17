@@ -74,7 +74,7 @@
 
             const albumConfig = {
                 description : "description.txt",
-                images : imageListOrder,
+                image : imageListOrder,
                 albumsImage : frontImage.name,
             };
 
@@ -275,6 +275,10 @@
         console.log(err);
 
     });
+
+    realisationWatch.on("unlinkDir",(path)=>{
+        console.log(path);
+    })
 
 //--------------------------------------------------------------------------------------------------------------
     app.listen(port,()=>{

@@ -1,7 +1,7 @@
 {
     "descitption" : " Nom du fichier qui contient la description de l'album + son extension"
 
-    "images" : [ ordre des images + leur extension]
+    "image" : [ ordre des images + leur extension]
 
     "albumsImage" : "image mis en avant avec l'album + son extension"
 }
