@@ -45,14 +45,108 @@
     albumApp.post('/albumAdd',async (req,_res)=>{
         const body = req?.body;
         if(body !== undefined){
+            //create a new album
+            var imageListOrder = [];
             const description = body.description;
             const title = body.title;
             const images = body.images;
             const frontImage = body.frontImage;
-            for(let img of images){
-                let data = Buffer.from(img.data,'base64');
-                fs.writeFileSync(path.join(__dirname,`/realisation_source/dashboard/${img.name}`),data)
+            
+            if (!fs.existsSync(path.join(__dirname,`/realisation_source/${title}`))) {
+                fs.mkdirSync(path.join(__dirname,`/realisation_source/${title}`));
             }
+            
+            for(let img of images){ //imported images
+                let data = Buffer.from(img.data,'base64');
+                fs.writeFileSync(path.join(__dirname,`/realisation_source/${title}/${img.name}`),data);
+            }
+            
+            fs.writeFileSync(path.join(__dirname,`/realisation_source/${title}/description.txt`),description); // description file
+            
+            if(!fs.readdirSync(`D:/github/solar-concept-web-site/realisation_source/${title}`).includes(`${frontImage.name}`)){ // if front image is already included in the repository do nothing
+                let frontData = Buffer.from(frontImage.data,'base64');
+                fs.writeFileSync(path.join(__dirname,`/realisation_source/${title}/${frontImage.name}`),frontData);
+            }
+
+            images.forEach((value,_index,_array)=>{ // image array
+                imageListOrder.push(value.name);
+            });
+
+            const albumConfig = {
+                description : "description.txt",
+                images : imageListOrder,
+                albumsImage : frontImage.name,
+            };
+
+            fs.writeFileSync(path.join(__dirname,`/realisation_source/${title}/config.json`),JSON.stringify(albumConfig)); //json config file
+
+            //-----------------------------------------------------------------------------------------------------------------------
+
+            //copy file to front end
+
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}`))){
+                fs.mkdirSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}`));
+            };
+            
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}`))){
+                fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}`));
+            }
+
+            for(let image of albumConfig.images){
+                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${image}`));
+            }
+            
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${albumConfig.albumsImage}`))){
+                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${albumConfig.albumsImage}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${albumConfig.albumsImage}`));
+            };
+
+            //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+            const $ = load(fs.readFileSync(path.join(__dirname,"/realisation_source/base.html")));
+            const $2 = load(fs.readFileSync(path.join(__dirname,"/solar_concept/nos_realisations/index.html")));
+
+            $(`
+                <h1>${title.toLocaleUpperCase()}</h1>
+                <hr>
+            `).appendTo('#description');
+
+            for(let ligne of description.split("\n")){
+                $(`<p>${ligne}</p>`).appendTo('#description');
+            }
+
+            for(let photo of imageListOrder){
+                $(`
+                    <div class="card mb-5 hover:tw-shadow-2xl">
+                        <img src="../../asset/image/realisation/${title}/${photo}" class="card-img-top" alt="Aventador card">
+                    </div>
+                    `).appendTo("#image");
+            };
+
+            fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`),$.html());
+
+            app.get(`/nos%20realisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
+                res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
+            });
+
+            $2(`
+                <div class="col">
+                    <div class="card">
+                        <a href="/nos%20realisations/${title.replace(/\s/g,"-")}">
+                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top" alt="${title} card">
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="/nos%20realisations/${title.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                            <h5 class="card-title">${title.toLocaleUpperCase()}</h5>
+                        </a>
+                    </div>
+                </div>
+                `).appendTo("#album");
+            
+            fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
+
+
+
         }
     });
 

@@ -1,4 +1,5 @@
-const imageList = [];
+var imageList = [];
+var frontImage = undefined;
 
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -9,7 +10,14 @@ const toBase64 = file => new Promise((resolve, reject) => {
     reader.onerror = reject;
 });
 
-function Verification(){
+function Verification(album){
+    var isComplete = true;
+    Object.values(album).forEach((value,_index,_array)=>{
+        if(value === undefined || value == []){
+            isComplete = false;
+        }
+    });
+    return isComplete;
     
 }
 
@@ -17,18 +25,25 @@ async function ImageAdd(){
     const containerImageUpload = document.getElementById('image-upload');
     const images = document.getElementById('FileUploader').files;
     for(let img of images){
-        imageList.push({data:await toBase64(img),name:img.name});
+        imageList.push({
+            data : await toBase64(img),
+            name : img.name
+        });
         containerImageUpload.innerHTML += 
         `<div class="card mb-5"><img src="${URL.createObjectURL(img)}" class="img-fluid card-img-top" id="${img.name}"></div>`
     }
 
 }
 
-function ImageFrontAdd(){
+async function ImageFrontAdd(){
     const containerImageUpload = document.getElementById('image-front-upload');
     const images = document.getElementById('FileFrontUploader').files;
     containerImageUpload.innerHTML =
-    `<div class="card mb-5"><img src="${URL.createObjectURL(images[0])}" class="img-fluid card-img-top"></div>`
+    `<div class="card mb-5"><img src="${URL.createObjectURL(images[0])}" class="img-fluid card-img-top" id="${images[0].name}"></div>`
+    frontImage = {
+        data : await toBase64(images[0]),
+        name : images[0].name
+    };
 }
 
 async function submitAlbum(){
@@ -36,19 +51,24 @@ async function submitAlbum(){
     const title = document.getElementById('title');
 
     const album = {
-        title : title.value,
-        description : description.value,
-        images : imageList,
-        frontImage : document.getElementById('image-front-upload')?.firstChild?.firstChild?.src || undefined,
+        title : title.value || undefined,
+        description : description.value || undefined,
+        images : imageList || undefined,
+        frontImage : frontImage,
     };
 
-    await fetch("/albumAdd",{
-        method : 'POST',
-        body : JSON.stringify(album),
-        headers : {
-            'Content-Type' : 'application/json'
-        }
-    })
+    if(Verification(album)){  
+        await fetch("/albumAdd",{
+            method : 'POST',
+            body : JSON.stringify(album),
+            headers : {
+                'Content-Type' : 'application/json'
+            }
+        })
+    }
+    else{
+        alert("Veuillez remplir les champs manquant");
+    }
 }
 
 function expendAreaText(){
