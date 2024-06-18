@@ -4,15 +4,12 @@
     const chokidar = require('chokidar');
     const express = require('express');
     const bodyParser = require('body-parser');
-    const multer = require('multer');
     const {Buffer} = require('buffer');
     const app = express();
     const albumApp = express();
-    const axios = require('axios');
     const port = process.env.PORT || 3000;
     const AlbumPort = process.env.PORT || 5000;
     const {load} = require('cheerio');
-    const upload = multer();
 
 //--------------------------------------------------------------------------------------------------------------
 
@@ -42,7 +39,7 @@
         res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
     })
 
-    albumApp.post('/albumAdd',async (req,_res)=>{
+    albumApp.post('/albumAdd',async (req,res)=>{
         const body = req?.body;
         if(body !== undefined){
             //create a new album
@@ -92,7 +89,7 @@
                 fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}`));
             }
 
-            for(let image of albumConfig.images){
+            for(let image of albumConfig.image){
                 fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${image}`));
             }
             
@@ -124,15 +121,11 @@
 
             fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`),$.html());
 
-            app.get(`/nos%20realisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
-                res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
-            });
-
             $2(`
                 <div class="col">
                     <div class="card">
                         <a href="/nos%20realisations/${title.replace(/\s/g,"-")}">
-                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top" alt="${title} card">
+                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card">
                         </a>
                     </div>
                     <div class="card-body text-center">
@@ -145,8 +138,11 @@
             
             fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
+            app.get(`/nos%20realisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
+                res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
+            });
 
-
+            res.send('Uplaod Success !');
         }
     });
 
@@ -249,7 +245,7 @@
                             <div class="col">
                                 <div class="card">
                                     <a href="/nos%20realisations/${file.replace(/\s/g,"-")}">
-                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" class="card-img-top" alt="${file} card">
+                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" class="card-img-top card-img-realisation" alt="${file} card">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
