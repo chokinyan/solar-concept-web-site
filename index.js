@@ -240,12 +240,12 @@
                         app.get(`/nos%20realisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
                             res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
                         });
-
+                        //card-img-realisation
                         $2(`
                             <div class="col">
                                 <div class="card">
-                                    <a href="/nos%20realisations/${file.replace(/\s/g,"-")}">
-                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" class="card-img-top card-img-realisation" alt="${file} card">
+                                    <a class="card-img-top" href="/nos%20realisations/${file.replace(/\s/g,"-")}">
+                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">

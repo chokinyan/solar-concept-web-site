@@ -13,6 +13,10 @@
     src: url("../font/Bebas_Neue.woff2");
 }
 
+*{
+    image-rendering: auto !important;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -44,24 +48,21 @@
 }
 
 .realisation-container{
-    max-width: 40%;
-    top: 50%;
-    bottom: 50%;
-    right: 50%;
+    top: 10%;
+    bottom: 90%;
+    right: 20%;
 }
 
 .RealisationTitre{
-    font-size: 4vw !important;
-    text-shadow: 0.2vw 0.2vh #000000;
+    font-size: 9vw !important;
+    text-shadow: 0.3vw 0.3vh #000000;
 }
 
 /* =================================================================================================================================================================================*/
 
 .card-img-realisation{
-    height: 32vh !important;
-    max-height: 32vh !important;
-    width: 100%;
-    text-align: center;
+    height: 27vh !important;
+    max-height: 30vh !important
 }
 
 /* =================================================================================================================================================================================*/
