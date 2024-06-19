@@ -46,7 +46,7 @@
 .carousel-inner-realisation > .carousel-item-realisation{
     height: 30vh !important;
 }
-
+ 
 .realisation-container{
     top: 10%;
     bottom: 90%;
@@ -73,3 +73,31 @@
 }
 
 /* =================================================================================================================================================================================*/
+.ciel-etoile-text{
+    font-size: 2vh !important;
+}
+
+.carousel-inner-ciel-etoile > .carousel-item-ciel-etoile{
+    height: 30vh !important;
+}
+
+.ciel-etoile-container{
+    padding-left: 5vw !important;
+    padding-top: 4vh !important;
+    padding-bottom: 7vh !important;
+}
+
+.title-ciel-etoile{
+    font-size: 4vw !important;
+    text-shadow: 0.1vw 0.1vh #000000;
+    padding-top: 3vh !important;
+}
+
+.ciel-etoile-img{
+    height: 30vh !important;
+    width: auto !important;
+}
+
+.img-container-etoile{
+    padding-left: 5vw !important;
+}

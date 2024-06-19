@@ -33,6 +33,10 @@
         res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
     });
 
+    app.get('/Automobile/ciel%20etoile',(req, res) =>{
+        res.sendFile(path.join(__dirname,'solar_concept/Automobile/ciel_etoile/index.html'));
+    })
+
 //--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{
