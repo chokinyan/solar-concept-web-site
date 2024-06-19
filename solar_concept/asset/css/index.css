@@ -93,11 +93,27 @@
     padding-top: 3vh !important;
 }
 
-.ciel-etoile-img{
+.ciel-etoile-img-first{
     height: 30vh !important;
     width: auto !important;
 }
 
-.img-container-etoile{
-    padding-left: 5vw !important;
+.container-etoile-first{
+    padding-left : 15vw !important;
+}
+
+.ciel-etoile-separator{
+    height: 1.5vh !important;
+    width: 100% !important;
+    background-color: #000000 !important;
+    margin-top: 3vh !important;
+}
+
+.ciel-etoile-img-second{
+    height: 60vh !important;
+    width: auto !important;
+}
+
+.container-etoile-second{
+    padding-left : 20vw !important;
 }
