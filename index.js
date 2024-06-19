@@ -33,12 +33,16 @@
         res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
     });
 
-    app.get('/Automobile/ciel%20etoile',(req, res) =>{
+    app.get('/Automobile/ciel%20etoile',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/ciel_etoile/index.html'));
     })
 
     app.get('/Automobile/covering',(_req, res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/covering/index.html'));
+    })
+
+    app.get('/batiment/vitrine%20solaire',(_req, res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/batiment/vitrine_solaire/index.html'));
     })
 
 //--------------------------------------------------------------------------------------------------------------------
