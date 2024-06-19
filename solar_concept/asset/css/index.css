@@ -131,7 +131,6 @@
 }
 
 .video-covering{
-    height: auto !important;
-    width: 30vw !important;
-    padding-left: 10vw !important;
+    height: 60vh !important;
+    width: auto !important;
 }
