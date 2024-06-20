@@ -117,3 +117,27 @@
 .video-covering{
     height: 60vh !important;
 }
+
+/* =============================================================================================================================================================================================*/
+
+.batiment-text{
+    font-size: 3vh !important;
+}
+
+.container-batiment{
+    padding-left: 5vw !important;
+    padding-top: 4vh !important;
+    padding-bottom: 7vh !important;   
+}
+
+/* ==============================================================================================================================================================================================*/
+
+.vitre-teinte-text{
+    font-size: 3vh !important;
+}
+
+.vitre-teinte-container{
+    padding-left: 5vw !important;
+    padding-top: 4vh !important;
+    padding-bottom: 7vh !important;
+}

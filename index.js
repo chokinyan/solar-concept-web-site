@@ -45,6 +45,10 @@
         res.sendFile(path.join(__dirname,'solar_concept/batiment/vitrine_solaire/index.html'));
     })
 
+    app.get('/Automobile/teintage%20de%20vitre',(_req, res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/Automobile/vitre_teinte/index.html'));
+    })
+
 //--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{

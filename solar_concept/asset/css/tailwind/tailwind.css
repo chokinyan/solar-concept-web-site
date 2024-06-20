@@ -593,6 +593,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.tw-bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
 .tw-object-none {
   -o-object-fit: none;
      object-fit: none;
@@ -604,16 +609,6 @@ video {
 
 .tw-text-center {
   text-align: center;
-}
-
-.tw-text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.tw-text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .tw-text-2xl {
