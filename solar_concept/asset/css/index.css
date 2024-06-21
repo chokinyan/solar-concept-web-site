@@ -77,14 +77,15 @@
     font-size: 2vh !important;
 }
 
-.carousel-inner-ciel-etoile > .carousel-item-ciel-etoile{
-    height: 30vh !important;
-}
-
-.ciel-etoile-container{
+.ciel-etoile-container,.ciel-etoile-container-second{
     padding-left: 5vw !important;
     padding-top: 4vh !important;
     padding-bottom: 7vh !important;
+}
+
+.ciel-etoile-container-second{
+    background-image: url('../image/ciel étoilé/358100500841382651.jpg');
+    background-size: cover;
 }
 
 .title-ciel-etoile{
@@ -93,13 +94,19 @@
     padding-top: 3vh !important;
 }
 
-.ciel-etoile-img-first{
-    height: 50vh !important;
+.ciel-etoile-img{
+    height: 30vh !important;
     width: auto !important;
 }
 
 .container-etoile-first{
     padding-left : 15vw !important;
+}
+
+.video-ciel-etoile{
+    height: 60vh !important;
+    border-color: white !important;
+    border-width: 3px !important;
 }
 
 /* =============================================================================================================================================================================================*/
@@ -132,11 +139,25 @@
 
 /* ==============================================================================================================================================================================================*/
 
+.vitre-teinte-main{
+    background-image: url('../image/04NpIkbEsTWG2.jpg');
+    background-size: cover !important;
+}
+
 .vitre-teinte-text{
     font-size: 3vh !important;
 }
 
 .vitre-teinte-container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4vh !important;
+    padding-bottom: 7vh !important;
+}
+
+/* ================================================================================================================================================================================================*/
+
+.container-ppf{
     padding-left: 5vw !important;
     padding-top: 4vh !important;
     padding-bottom: 7vh !important;

@@ -49,6 +49,10 @@
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/vitre_teinte/index.html'));
     })
 
+    app.get('/Automobile/film%20de%20protection',(_req, res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/Automobile/ppf/index.html'));
+    })
+
 //--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{
