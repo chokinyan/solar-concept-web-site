@@ -53,6 +53,10 @@
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/ppf/index.html'));
     })
 
+    app.get('/batiment/film%20decoratif',(_req,res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/batiment/film_decoratif/index.html'));
+    })
+
 //--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{
