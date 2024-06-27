@@ -41,10 +41,6 @@
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/covering/index.html'));
     })
 
-    app.get('/batiment/vitrinesolaire',(_req, res)=>{
-        res.sendFile(path.join(__dirname,'solar_concept/batiment/vitrine_solaire/index.html'));
-    })
-
     app.get('/Automobile/teintagedevitre',(_req, res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/vitre_teinte/index.html'));
     })
@@ -178,16 +174,6 @@
         }
     });
 
-
-    
-    /*
-    /vehicule/covering
-    /vehicule/teintagedevitre
-    /vehicule/cieletoile
-    /vehicule/flocage
-
-    /batiment/vitrinesolaire
-    */
 //-------------------------------------------------------------------------------------------------------------------------
 
     const realisationWatch = chokidar.watch(path.join(__dirname,'/realisation_source'),{persistent:true});
