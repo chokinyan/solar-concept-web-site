@@ -25,7 +25,7 @@
         res.sendFile(path.join(__dirname,'solar_concept'));
     });
 
-    app.get('/nos%20realisations',(_req, res) =>{
+    app.get('/nosrealisations',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/index.html'));
     });
 
@@ -33,7 +33,7 @@
         res.sendFile(path.join(__dirname,'solar_concept/contact/index.html'));
     });
 
-    app.get('/Automobile/ciel%20etoile',(_req, res) =>{
+    app.get('/Automobile/cieletoile',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/ciel_etoile/index.html'));
     })
 
@@ -41,27 +41,27 @@
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/covering/index.html'));
     })
 
-    app.get('/batiment/vitrine%20solaire',(_req, res)=>{
+    app.get('/batiment/vitrinesolaire',(_req, res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/batiment/vitrine_solaire/index.html'));
     })
 
-    app.get('/Automobile/teintage%20de%20vitre',(_req, res)=>{
+    app.get('/Automobile/teintagedevitre',(_req, res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/vitre_teinte/index.html'));
     })
 
-    app.get('/Automobile/film%20de%20protection',(_req, res)=>{
+    app.get('/Automobile/filmdeprotection',(_req, res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/Automobile/ppf/index.html'));
     })
 
-    app.get('/batiment/film%20decoratif',(_req,res)=>{
+    app.get('/batiment/film-pour-batiment',(_req,res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/batiment/film_decoratif/index.html'));
     })
 
-    app.get('/marquage%20publicitaire/flocage%20Automobile',(_req,res)=>{
+    app.get('/marquagepublicitaire/flocageAutomobile',(_req,res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/flocage_Automobile/index.html'));
     })
 
-    app.get('/marquage%20publicitaire/flocage%20textile',(_req,res)=>{
+    app.get('/marquagepublicitaire/flocagetextile',(_req,res)=>{
         res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/flocage_textile/index.html'));
     })
 
@@ -156,12 +156,12 @@
             $2(`
                 <div class="col">
                     <div class="card">
-                        <a href="/nos%20realisations/${title.replace(/\s/g,"-")}">
+                        <a href="/nosrealisations/${title.replace(/\s/g,"-")}">
                             <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card">
                         </a>
                     </div>
                     <div class="card-body text-center">
-                        <a href="/nos%20realisations/${title.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                        <a href="/nosrealisations/${title.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
                             <h5 class="card-title">${title.toLocaleUpperCase()}</h5>
                         </a>
                     </div>
@@ -170,7 +170,7 @@
             
             fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
-            app.get(`/nos%20realisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
+            app.get(`/nosrealisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
                 res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
             });
 
@@ -182,11 +182,11 @@
     
     /*
     /vehicule/covering
-    /vehicule/teintage%20de%20vitre
-    /vehicule/ciel%20etoile
+    /vehicule/teintagedevitre
+    /vehicule/cieletoile
     /vehicule/flocage
 
-    /batiment/vitrine%20solaire
+    /batiment/vitrinesolaire
     */
 //-------------------------------------------------------------------------------------------------------------------------
 
@@ -269,19 +269,19 @@
 
                         fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`),$.html());
 
-                        app.get(`/nos%20realisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
+                        app.get(`/nosrealisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
                             res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
                         });
                         //card-img-realisation
                         $2(`
                             <div class="col">
                                 <div class="card">
-                                    <a class="card-img-top" href="/nos%20realisations/${file.replace(/\s/g,"-")}">
+                                    <a class="card-img-top" href="/nosrealisations/${file.replace(/\s/g,"-")}">
                                         <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
-                                    <a href="/nos%20realisations/${file.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                                    <a href="/nosrealisations/${file.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
                                         <h5 class="card-title">${file.toLocaleUpperCase()}</h5>
                                     </a>
                                 </div>
@@ -342,7 +342,7 @@ Démontage pare choc avant / arrière bas de caisse, passages de roues, optiques
 
 
 /*
-app.get('/nos%20realisations/aventador',(req, res) =>{
+app.get('/nosrealisations/aventador',(req, res) =>{
 res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/aventador/index.html'));
 });
 */
@@ -361,7 +361,7 @@ res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/aventador/index
 /*
 <div class="col">
 <div class="card">
-<a href="/nos%20realisations/aventador">
+<a href="/nosrealisations/aventador">
 <img src="asset/image/automobile/aventador.jpg" class="card-img-top" alt="Aventador card">
 </a>
 </div>

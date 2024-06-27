@@ -612,9 +612,9 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.tw-object-none {
-  -o-object-fit: none;
-     object-fit: none;
+.tw-object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .tw-ps-8 {
