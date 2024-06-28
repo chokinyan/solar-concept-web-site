@@ -67,7 +67,7 @@
         res.sendFile(path.join(__dirname,'/realisation_source/dashboard/realisation_edit.html'));
     })
 
-    albumApp.post('/albumAdd',async (req,res)=>{
+    albumApp.post('/albumAdd',(req,res)=>{
         const body = req?.body;
         if(body !== undefined){
             //create a new album
@@ -109,20 +109,20 @@
 
             //copy file to front end
 
-            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}`))){
-                fs.mkdirSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}`));
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}`))){
+                fs.mkdirSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}`));
             };
             
-            if(!fs.existsSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}`))){
-                fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}`));
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/nos_realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}`))){
+                fs.mkdirSync(path.join(__dirname,`/solar_concept/nos_realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}`));
             }
 
             for(let image of albumConfig.image){
-                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${image}`));
+                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${image}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${image}`));
             }
             
-            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${albumConfig.albumsImage}`))){
-                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${albumConfig.albumsImage}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title}/${albumConfig.albumsImage}`));
+            if(!fs.existsSync(path.join(__dirname,`/solar_concept/asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${albumConfig.albumsImage}`))){
+                fs.copyFileSync(path.join(__dirname,`/realisation_source/${title}/${albumConfig.albumsImage}`),path.join(__dirname,`/solar_concept/asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${albumConfig.albumsImage}`));
             };
 
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -142,22 +142,22 @@
             for(let photo of imageListOrder){
                 $(`
                     <div class="card mb-5 hover:tw-shadow-2xl">
-                        <img src="../../asset/image/realisation/${title}/${photo}" class="card-img-top" alt="Aventador card">
+                        <img src="../../asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${photo}" class="card-img-top" alt="Aventador card">
                     </div>
                     `).appendTo("#image");
             };
 
-            fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`),$.html());
+            fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}/index.html`),$.html());
 
             $2(`
                 <div class="col">
                     <div class="card">
-                        <a href="/nosrealisations/${title.replace(/\s/g,"-")}">
-                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card" class="border-3 border-black">
+                        <a href="/nosrealisations/${title.replace(/\s/g,"_")}">
+                            <img src="asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card" class="border-3 border-black">
                         </a>
                     </div>
                     <div class="card-body text-center">
-                        <a href="/nosrealisations/${title.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                        <a href="/nosrealisations/${title.replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
                             <h5 class="card-title">${title.toLocaleUpperCase()}</h5>
                         </a>
                     </div>
@@ -166,7 +166,7 @@
             
             fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
-            app.get(`/nosrealisations/${title.replace(/\s/g,"-")}`,(_req,res)=>{
+            app.get(`/nosrealisations/${title.replace(/\s/g,"_")}`,(_req,res)=>{
                 res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
             });
 
@@ -255,19 +255,19 @@
 
                         fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`),$.html());
 
-                        app.get(`/nosrealisations/${file.replace(/\s/g,"-")}`,(req,res)=>{
+                        app.get(`/nosrealisations/${file.replace(/\s/g,"_")}`,(req,res)=>{
                             res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
                         });
                         //card-img-realisation
                         $2(`
                             <div class="col">
                                 <div class="card">
-                                    <a class="card-img-top" href="/nosrealisations/${file.replace(/\s/g,"-")}">
+                                    <a class="card-img-top" href="/nosrealisations/${file.replace(/\s/g,"_")}">
                                         <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card" class="border-3 border-black">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
-                                    <a href="/nosrealisations/${file.replace(/\s/g,"-")}" class="tw-text-black tw-no-underline">
+                                    <a href="/nosrealisations/${file.replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
                                         <h5 class="card-title">${file.toLocaleUpperCase()}</h5>
                                     </a>
                                 </div>
@@ -305,55 +305,12 @@
 
 })();
 
-/*
-<h1>Lamborghini Aventador roadster 700LP</h1>
-<hr>
-<p>Lamborghini Aventador roadster 700LP pour la piste du musée de l'automobile de Mulhouse.</p>
-<p>
-🔸Total covering cameleon gold avery
-Dennison et noir brillant 3M
-<p>🔸Vitres teintées </p>
-<p>🔸Feux teintés avant / arrière et
-(répetiteurs + feux stop)</p>
-<p>🔸Protection carrosserie lame avant
-carbone et logo aventador seuil de
-porte</p>
-<p> 🔸Covering carbone seuil de porte </p>
-
-<p><img src="../../asset/image/icon/wrench.svg" class="d-inline"> Total covering / Total démontage </p>
-
-Démontage pare choc avant / arrière bas de caisse, passages de roues, optiques avant /arrière, aileron, cache moteur, rétroviseurs, poignées de portes, toit, coffre, seuil de portes....</p>
-*/
-
-
 
 /*
 app.get('/nosrealisations/aventador',(req, res) =>{
 res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/aventador/index.html'));
 });
 */
-
-/*
-<div class="card mb-5 hover:tw-shadow-2xl">
-<img src="../../asset/image/automobile/aventador.jpg" class="card-img-top" alt="Aventador card">
-</div>
-*/
-
-
-
-
-
-
-/*
-<div class="col">
-<div class="card">
-<a href="/nosrealisations/aventador">
-<img src="asset/image/automobile/aventador.jpg" class="card-img-top" alt="Aventador card">
-</a>
-</div>
-*/
-
-
 
 // astro build
 // gatsby
