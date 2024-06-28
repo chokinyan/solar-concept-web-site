@@ -153,7 +153,7 @@
                 <div class="col">
                     <div class="card">
                         <a href="/nosrealisations/${title.replace(/\s/g,"-")}">
-                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card">
+                            <img src="asset/image/realisation/${title}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card" class="border-3 border-black">
                         </a>
                     </div>
                     <div class="card-body text-center">
@@ -263,7 +263,7 @@
                             <div class="col">
                                 <div class="card">
                                     <a class="card-img-top" href="/nosrealisations/${file.replace(/\s/g,"-")}">
-                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card">
+                                        <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card" class="border-3 border-black">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">

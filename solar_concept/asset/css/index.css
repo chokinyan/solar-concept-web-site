@@ -177,9 +177,18 @@
 /* =============================================================================================================================================================================================*/
 
 .carousel-realisation-inner{
-    height: 45vh !important;
+    height: auto !important;
 }
 
 .carousel-realisation-item{
-    height: 45vh !important;
+    height: auto !important;
+}
+
+.realisation-titre{
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: 80% !important;
+    font-size: 5vw !important;
 }
