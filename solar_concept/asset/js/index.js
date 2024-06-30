@@ -9,8 +9,8 @@ function CheckDevice (){
     });
 };
 
-function Test(){
-    const test = document.getElementById("Test");
+function Carousel(){
+    const CarouselAutoElement = document.getElementsByClassName("Carousel-auto");
     const observer = new MutationObserver(function(mutations){
         if(mutations.at(0).target?.classList.contains("active")){
             mutations.at(0).target.childNodes.forEach((child,_key,_parent)=>{
@@ -28,7 +28,9 @@ function Test(){
             });
         };
     });
-    observer.observe(test, {
-        attributes: true,
-    });
+    for(let element of CarouselAutoElement){
+        observer.observe(element, {
+            attributes: true,
+        }); 
+    }
 }

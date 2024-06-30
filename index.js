@@ -53,12 +53,8 @@
         res.sendFile(path.join(__dirname,'solar_concept/batiment/film_decoratif/index.html'));
     })
 
-    app.get('/marquagepublicitaire/flocageAutomobile',(_req,res)=>{
-        res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/flocage_Automobile/index.html'));
-    })
-
-    app.get('/marquagepublicitaire/flocagetextile',(_req,res)=>{
-        res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/flocage_textile/index.html'));
+    app.get('/marquage-publicitaire',(_req,res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/index.html'));
     })
 
 //--------------------------------------------------------------------------------------------------------------------

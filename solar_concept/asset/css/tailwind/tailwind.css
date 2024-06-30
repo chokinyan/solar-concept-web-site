@@ -631,9 +631,13 @@ video {
   line-height: 1;
 }
 
-.tw-text-8xl {
-  font-size: 6rem;
-  line-height: 1;
+.tw-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.tw-uppercase {
+  text-transform: uppercase;
 }
 
 .tw-text-black {
