@@ -34,3 +34,31 @@ function Carousel(){
         }); 
     }
 }
+
+function Slick(){
+    $(
+        function(){
+            $(".slicker").slick({
+                dots : true,
+                slidesToShow : 3,
+                slidesToScroll : 1,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 6000,
+                arrows: false,
+                centerPadding : '40px',
+                responsive : [
+                    {
+                        breakpoint: 1023,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          adaptiveHeight: true,
+                          centerPadding: '0px'
+                        }
+                    }
+                ]
+            })
+        }
+    )
+}

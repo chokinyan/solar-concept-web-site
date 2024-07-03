@@ -9,13 +9,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Solar Concept">
         <script src="/asset/js/index.js"></script>
+        <script type="module" src="asset/js/avis.js"></script>
         <script src="/asset/js/timeout.js"></script>
         <script src="/asset/js/jquery/jquery-3.7.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="/asset/js/bootstrap/bootstrap.bundle.js"></script>
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
         <link rel="stylesheet" href="/asset/css/index.css">
         <link rel="stylesheet" href="/asset/css/bootstrap/bootstrap-icons.css">
         <link rel="stylesheet" href="/asset/css/tailwind/tailwind.css">
         <link rel="stylesheet" href="/asset/css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     </head>
     <body>
         <header class=" tw-bg-black bg-gradient sticky-top"> 
@@ -56,7 +60,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/nosrealisations">Nos Réalisations</a>
+                            <a href="/nos-realisations">Nos Réalisations</a>
                         </li>
                         <li class="nav-item">
                             <a href="/contact">Contact</a>
@@ -101,33 +105,31 @@
                         <img src="asset/image/2552948156343645744.jpg" alt="deventure" class="rounded-5">
                     </div>
                 </div>
-                <div class="container-fluid d-xl-flex tw-bg-gray-700 bg-gradient py-3">
-                    <div class="container tw-self-center d-flex flex-column">
-                        <p class=" tw-text-5xl fw-bold border-5 tw-uppercase border-black rounded-5" style="margin: auto !important; padding:1vh !important;">
-                            Automobile
-                        </p>
-                        <br>
-                        <ul>
-                            <li class="d-flex justify-content-between">
-                                <p class="text-black display-1 tw-self-center">Covering</p>
-                                <img class="img-fluid col-xl-7 col-6" src="asset/image/2552948156343645744.jpg" alt="打打打打打打打打打打">
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                    <img class="img-fluid col-xl-7 col-6" src="asset/image/2552948156343645744.jpg" alt="打打打打打打打打打打">
-                                    <p class="text-black display-1 tw-self-center">Ciel étoilé</p>
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <p class="text-black display-1 tw-self-center">Vitres teintées</p>
-                                <img class="img-fluid col-xl-7 col-6" src="asset/image/2552948156343645744.jpg" alt="打打打打打打打打打打">
-                            </li>
-                            <li class="d-flex justify-content-between">
-                                <img class="img-fluid col-xl-7 col-6" src="asset/image/2552948156343645744.jpg" alt="打打打打打打打打打打">
-                                <p class="text-black display-1 tw-self-center">PPF</p>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="container-fluid d-xl-flex py-3 AutomobileMain flex-column">
+                    <p class="text-center tw-text-5xl fw-bold border-5 tw-uppercase border-white rounded-5 text-white" style="margin: auto !important; padding:1vh !important;">
+                        Automobile
+                    </p>
+                    <ul class="mt-5 d-flex justify-content-xl-around flex-xl-row flex-column text-center">
+                        <li>
+                            <video src="asset/image/automobile/5b77e51f41e7453aa179adfb0cb4a0d6.mp4" class="Automobile-video border-4 border-white" autoplay loop muted alt="打打打打打打打打打打"></video>
+                            <p class="text-white tw-text-3xl">
+                                Covering</p>
+                        </li>
+                        <li class="my-xl-0 my-5">
+                            <video src="asset/image/automobile/ciel.mp4" class="Automobile-video border-4 border-white" autoplay loop muted alt="打打打打打打打打打打"></video>
+                            <p class="text-white tw-text-3xl">Ciel étoilé</p>
+                        </li>
+                        <li class="mb-xl-0 mb-5">
+                            <video src="asset/image/automobile/vitre.mp4" class="Automobile-video border-4 border-white" autoplay loop muted alt="打打打打打打打打打打"></video>
+                            <p class="text-white tw-text-3xl">Vitres teintées</p>
+                        </li>
+                        <li>
+                            <video src="asset/image/automobile/ppf.mp4" class="Automobile-video border-4 border-white" autoplay loop muted alt="打打打打打打打打打打"></video>
+                            <p class="text-white tw-text-3xl">PPF</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="container-fluid d-xl-flex tw-bg-orange-500 bg-gradient py-3">
+                <div class="container-fluid d-xl-flex tw-bg-white bg-gradient py-3">
                     <div class="container tw-self-center d-flex flex-column">
                         <p class="tw-text-5xl tw-uppercase border-5 border-black rounded-5" style="margin: auto !important; padding:1vh !important;">
                             Marquage Publicitaire
@@ -148,7 +150,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="container-fluid tw-bg-gray-700 bg-gradient py-3">
+                <div class="container-fluid tw-bg-gray-400 bg-gradient py-3">
                     <div class="container-fluid d-flex flex-column">
                         <p class="tw-text-5xl tw-uppercase border-5 border-black rounded-5" style="margin: auto !important; padding:1vh !important;">
                             Bâtiment
@@ -173,13 +175,23 @@
                                     <img class="img-fluid" src="asset/image/2552948156343645744.jpg" alt="打打打打打打打打打打">
                                     Film sécurité
                                 </p>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="container-fluid py-5">
+                <div class="container text-center d-flex">
+                    <h1 class="border-5 border-black rounded-5" style="margin: auto !important; padding:0.5vh !important;">
+                        NOS AVIS
+                    </h1>
+                </div>
+                <div class="container slicker pt-5"></div>
+                <div class="d-flex justify-content-center">
+                    <dotlottie-player src="https://lottie.host/fa049911-64e6-425a-9956-cc667b3058b8/0Qw0WCNc8Q.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+                </div>
+            </div>
         <script>Carousel()</script>
+        <script>Slick()</script>
         </main>
         <footer class="tw-bg-black ps-5 bg-gradient container-fluid tw-float-left">
             <div class="py-5 d-flex row">
@@ -278,7 +290,7 @@
                     <ul>
                         <li>
                             <h4>
-                            <a href="/nosrealisations" class="tw-no-underline tw-text-white">
+                            <a href="/nos-realisations" class="tw-no-underline tw-text-white">
                                 Nos Réalisations
                             </a>
                             </h4>

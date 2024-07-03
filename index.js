@@ -25,7 +25,7 @@
         res.sendFile(path.join(__dirname,'solar_concept'));
     });
 
-    app.get('/nosrealisations',(_req, res) =>{
+    app.get('/nos-realisations',(_req, res) =>{
         res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/index.html'));
     });
 
@@ -148,12 +148,12 @@
             $2(`
                 <div class="col">
                     <div class="card">
-                        <a href="/nosrealisations/${title.replace(/\s/g,"_")}">
+                        <a href="/nos-realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}">
                             <img src="asset/image/realisation/${title.toLocaleUpperCase().replace(/\s/g,"_")}/${frontImage.name}" class="card-img-top card-img-realisation" alt="${title} card" class="border-3 border-black">
                         </a>
                     </div>
                     <div class="card-body text-center">
-                        <a href="/nosrealisations/${title.replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
+                        <a href="/nos-realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
                             <h5 class="card-title">${title.toLocaleUpperCase()}</h5>
                         </a>
                     </div>
@@ -162,7 +162,7 @@
             
             fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
-            app.get(`/nosrealisations/${title.replace(/\s/g,"_")}`,(_req,res)=>{
+            app.get(`/nos-realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}`,(_req,res)=>{
                 res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${title}/index.html`));
             });
 
@@ -251,19 +251,19 @@
 
                         fs.writeFileSync(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`),$.html());
 
-                        app.get(`/nosrealisations/${file.replace(/\s/g,"_")}`,(req,res)=>{
+                        app.get(`/nos-realisations/${file.replace(/\s/g,"_")}`,(req,res)=>{
                             res.sendFile(path.join(__dirname,`/solar_concept/nos_realisations/${folderName}/index.html`));
                         });
                         //card-img-realisation
                         $2(`
                             <div class="col">
                                 <div class="card">
-                                    <a class="card-img-top" href="/nosrealisations/${file.replace(/\s/g,"_")}">
+                                    <a class="card-img-top" href="/nos-realisations/${file.toLocaleUpperCase().replace(/\s/g,"_")}">
                                         <img src="asset/image/realisation/${folderName}/${config.albumsImage}" alt="${file} card" class="border-3 border-black">
                                     </a>
                                 </div>
                                 <div class="card-body text-center">
-                                    <a href="/nosrealisations/${file.replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
+                                    <a href="/nos-realisations/${file.toLocaleUpperCase().replace(/\s/g,"_")}" class="tw-text-black tw-no-underline">
                                         <h5 class="card-title">${file.toLocaleUpperCase()}</h5>
                                     </a>
                                 </div>
@@ -303,7 +303,7 @@
 
 
 /*
-app.get('/nosrealisations/aventador',(req, res) =>{
+app.get('/nos-realisations/aventador',(req, res) =>{
 res.sendFile(path.join(__dirname,'solar_concept/nos_realisations/aventador/index.html'));
 });
 */

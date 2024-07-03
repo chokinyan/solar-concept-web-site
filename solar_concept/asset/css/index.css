@@ -190,3 +190,72 @@
     transform: translate(0%,-50%);
     scale: 48%;
 }
+
+/* =============================================================================================================================================================================================*/
+
+.AutomobileMain{
+    background-image: url("../image/automobile/7964307101895079773.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: 50% !important;
+}
+
+.Automobile-video{
+    width: auto !important;
+    height: 65vh !important;
+    margin: auto !important;
+}
+
+/* =============================================================================================================================================================================================*/
+
+.slick-dots{
+    padding-top: 3vh !important;
+    display: flex !important;
+    justify-content: center !important;
+
+}
+
+.slick-dots button {
+    width: 30px;
+    height: 30px;
+    font-size: 0px;
+    border: 0px;
+    padding: 0;
+    margin: 0 0.3vw;
+    position: relative;
+    background: transparent
+}
+
+.slick-dots button:after {
+    position: absolute;
+    content: '';
+    background: rgba(0,0,0,0.2);
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%)
+}
+
+.slick-dots button:focus {
+    outline: 1px dotted rgba(89,91,97,0.2)
+}
+
+.slick-dots .slick-active button:after {
+    background: black;
+}
+
+/* =============================================================================================================================================================================================*/
+
+.rating-star{
+    color: #ffd200 !important; 
+    font-size : 25px !important;
+}
+
+.rating-profile-photo{
+    width: auto !important;
+    height: 5vh !important;
+    display: inline !important;
+    padding-right: 1vw !important;
+}
