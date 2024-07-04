@@ -11,6 +11,11 @@ for(let review of avis.review){
     for(let i = 0;i < review?.rating;i++){
         star += '<i class="bi bi-star-fill rating-star"></i>';
     };
+    if(!Number.isInteger(review?.rating) && review?.rating !== undefined){
+        star += '<i class="bi bi-star-half rating-star"></i>';
+    }
+
+
     let element = 
     `
         <div class="card">
@@ -28,8 +33,13 @@ for(let review of avis.review){
 
 nbAvis.textContent = `${avis?.userRatingCount}`;
 
+
 for(let i = 0; i < avis?.rating;i++){
     starAgence += '<i class="bi bi-star-fill rating-star-agence"></i>';
 };
+
+if(!Number.isInteger(avis?.rating) && avis?.rating !== undefined){
+    starAgence += '<i class="bi bi-star-half rating-star-agence"></i>';
+}
 
 ratingAgence.innerHTML += starAgence;
