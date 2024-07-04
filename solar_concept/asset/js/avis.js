@@ -8,9 +8,20 @@ let starAgence = ""
 
 for(let review of avis.review){
     let star = "";
-    for(let i = 0;i < review?.rating;i++){
+    try{
+        var rating = Math.round(review?.rating) > review?.rating ? Math.round(review?.rating) - 1 : Math.round(review?.rating);
+    }
+    catch(e){
+        var rating = undefined;
+        console.error("Invalid rating for review: " + review);
+    }
+
+    console.log(rating)
+
+    for(let i = 0;i < rating;i++){
         star += '<i class="bi bi-star-fill rating-star"></i>';
     };
+
     if(!Number.isInteger(review?.rating) && review?.rating !== undefined){
         star += '<i class="bi bi-star-half rating-star"></i>';
     }
@@ -33,8 +44,16 @@ for(let review of avis.review){
 
 nbAvis.textContent = `${avis?.userRatingCount}`;
 
+try {
+    var rating = Math.round(avis?.rating) > avis?.rating ? Math.round(avis?.rating) - 1 :  Math.round(avis?.rating);
+}
+catch{
+    var rating = undefined;
+    console.error("Invalid rating for agence");
+}
 
-for(let i = 0; i < avis?.rating;i++){
+
+for(let i = 0; i < rating;i++){
     starAgence += '<i class="bi bi-star-fill rating-star-agence"></i>';
 };
 
