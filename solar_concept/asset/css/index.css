@@ -259,3 +259,14 @@
     display: inline !important;
     padding-right: 1vw !important;
 }
+
+.rating-star-agence{
+    color: #ffd200 !important; 
+    font-size : 40px !important;
+}
+
+.google-logo-avis{
+    position: absolute;
+    bottom: -45px !important;
+    left: -140px !important;
+}

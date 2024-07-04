@@ -80,7 +80,11 @@ const tiktokFollower = async ()=>{
 
 const googleReview = async ()=>{
 
-    const avis = [];
+    const avis = {
+        review : [],
+        rating : 0,
+        userRatingCount : 0
+    };
 
     const key = "AIzaSyDfeyHETHXEWHsE94gCpNbjzslDL3TK4J8";
 
@@ -97,12 +101,13 @@ const googleReview = async ()=>{
     ).then(async (response)=>{
         const data = await response.json();
         for(let review of data.reviews){
-            avis.push(new Review(review.originalText.text,review.authorAttribution.displayName,review.authorAttribution.photoUri,review.rating));
+            avis.review.push(new Review(review.originalText.text,review.authorAttribution.displayName,review.authorAttribution.photoUri,review.rating));
         }
-
+        avis.rating = data.rating;
+        avis.userRatingCount = data.userRatingCount;
         const avisStr = JSON.stringify(avis);
 
-        fs.writeFile('./avis.json', avisStr, (err)=>{
+        fs.writeFile('./solar_concept/avis.json', avisStr, (err)=>{
             console.error(err)
         });
     })
