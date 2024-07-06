@@ -162,8 +162,10 @@
                         </a>
                     </div>
                 </div>
-                `).appendTo("#album");
+            `).appendTo("#album");
             
+            $('title').text(`Solar Concept - ${title.toLocaleUpperCase()}`);
+
             fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
             app.get(`/nos-realisations/${title.toLocaleUpperCase().replace(/\s/g,"_")}`,(_req,res)=>{
@@ -272,8 +274,10 @@
                                     </a>
                                 </div>
                             </div>
-                            `).appendTo("#album");
+                        `).appendTo("#album");
                         
+                        $('title').text(`Solar Concept - ${file.toLocaleUpperCase()}`);
+
                         fs.writeFileSync(path.join(__dirname,"solar_concept/nos_realisations/index.html"),$2.html());
 
                         $('#description').empty();
