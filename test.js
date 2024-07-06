@@ -86,8 +86,6 @@ const googleReview = async ()=>{
         userRatingCount : 0
     };
 
-    const key = "AIzaSyDfeyHETHXEWHsE94gCpNbjzslDL3TK4J8";
-
     await fetch(`https://places.googleapis.com/v1/places/ChIJcZ3gT2mbkUcRSAwiCUyhjhk`,
         {
             method : 'GET',

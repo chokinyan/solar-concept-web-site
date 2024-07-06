@@ -655,6 +655,11 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.\*\:tw-text-white > * {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:tw-shadow-2xl:hover {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -675,7 +680,37 @@ video {
   line-height: 1.75rem;
 }
 
+.child\:\*\:tw-text-xl > * > * {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.child\:\*\:tw-text-2xl > * > * {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.child\:\*\:\*\:tw-text-2xl > * > * > * {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.child\:\*\:\*\:\*\:tw-text-2xl > * > * > * > * {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .child\:\*\:\*\:tw-text-white > * > * > * {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.child\:\*\:\*\:\*\:tw-text-white > * > * > * > * {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.child\:\*\:tw-text-white > * > * {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }

@@ -57,6 +57,10 @@
         res.sendFile(path.join(__dirname,'solar_concept/marquage_publicitaire/index.html'));
     })
 
+    app.get('/test',(_req,res)=>{
+        res.sendFile(path.join(__dirname,'solar_concept/test.html'));
+    })
+
 //--------------------------------------------------------------------------------------------------------------------
 
     albumApp.get('/',(_req,res)=>{
