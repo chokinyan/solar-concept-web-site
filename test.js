@@ -18,6 +18,8 @@
 
 //https://www.facebook.com/profile.php?id=100063548076007&locale=fr_FR
 
+
+const key = require('./config/config.json');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
