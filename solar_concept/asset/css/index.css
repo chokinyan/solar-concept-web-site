@@ -270,3 +270,21 @@
     bottom: -45px !important;
     left: -140px !important;
 }
+
+/* ============================================================================================================================================================================================= */
+
+
+.marquage-img{
+    height: 60vh !important;
+    width: auto !important;
+}
+
+.marquage-container,.marquage-container-second{
+    padding-left: 5vw !important;
+    padding-top: 4vh !important;
+    padding-bottom: 7vh !important;
+}
+
+.marquage-video{
+    height: 60vh !important;
+}
